@@ -174,6 +174,12 @@ public class FingerPrint1 {
             Pointer pFingerPrintCfg = m_strFingerPrintCfg.getPointer();
             pFingerPrintCfg.write(0, lpBuffer.getByteArray(0,m_strFingerPrintCfg.size()), 0, m_strFingerPrintCfg.size());
             m_strFingerPrintCfg.read();
+            if(m_strFingerPrintCfg.dwsize != 0) {
+                System.out.println("GetFingerPrintCfgCallback NET_SDK_CALLBACK_TYPE_DATA, 取得指纹成功");
+                System.out.println("指纹数据：" + new String(m_strFingerPrintCfg.byFingerData));
+            }else{
+                System.out.println("GetFingerPrintCfgCallback NET_SDK_CALLBACK_TYPE_DATA, 取得指纹失败");
+            }
         }else if (dwType == hCNetSDK.NET_SDK_CALLBACK_TYPE_STATUS)
         {
             //状态值
@@ -184,6 +190,7 @@ public class FingerPrint1 {
             if (cfgBuf.dwstatus == HCNetSDK.NET_SDK_CALLBACK_STATUS_SUCCESS)
             {
                 m_bGetFingerPrintCfgFinish = true; //获取指纹参数完成
+                System.out.println("GetFingerPrintCfgCallback NET_SDK_CALLBACK_STATUS_SUCCESS, 指纹查找完成");
             }else if(cfgBuf.dwstatus == HCNetSDK.NET_SDK_CALLBACK_STATUS_FAILED)
             {
                 byte[] byCardNo = new byte[HCNetSDK.ACS_CARD_NO_LEN + 1];
