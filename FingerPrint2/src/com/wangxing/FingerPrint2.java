@@ -34,7 +34,7 @@ public class FingerPrint2 {
 
         if(args.length != 5){
             System.out.println("用法：" );
-            System.out.println("java FingerPrint2 <IP> <Port> <UserName> <Password> <CardNO>" );
+            System.out.println("java -jar FingerPrint2.jar <IP> <Port> <UserName> <Password> <CardNO>" );
             return;
         }
 

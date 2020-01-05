@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: com.wangxing.FingerPrint2
+Class-Path: jna.jar examples.jar
+

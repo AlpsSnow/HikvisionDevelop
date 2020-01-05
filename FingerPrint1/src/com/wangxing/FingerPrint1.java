@@ -35,7 +35,7 @@ public class FingerPrint1 {
         // write your code here
         if(args.length != 5){
             System.out.println("用法：" );
-            System.out.println("java FingerPrint1 <IP> <Port> <UserName> <Password> <CardNO>" );
+            System.out.println("java -jar FingerPrint1.jar <IP> <Port> <UserName> <Password> <CardNO>" );
             return;
         }
         // 初始化SDK资源
