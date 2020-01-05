@@ -27,7 +27,7 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.wangxing.FingerPrint1" />
       <module name="FingerPrint1" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="PROGRAM_PARAMETERS" value="192.168.160.1 8000 admin password123 1" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method v="2">
@@ -66,38 +66,42 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1877" height="2" key="GridCell.Tab.0.bottom" timestamp="1578147798508">
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578218871698">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="2" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1578147798508" />
-    <state width="1877" height="2" key="GridCell.Tab.0.center" timestamp="1578147798508">
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578218871698" />
+    <state width="938" height="333" key="GridCell.Tab.0.bottom" timestamp="1578219349829">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="2" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1578147798508" />
-    <state width="1877" height="2" key="GridCell.Tab.0.left" timestamp="1578147798508">
+    <state width="938" height="333" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1578219349829" />
+    <state width="938" height="333" key="GridCell.Tab.0.center" timestamp="1578219349829">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="2" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1578147798508" />
-    <state width="1877" height="2" key="GridCell.Tab.0.right" timestamp="1578147798508">
+    <state width="938" height="333" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1578219349829" />
+    <state width="938" height="333" key="GridCell.Tab.0.left" timestamp="1578219349828">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="2" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1578147798508" />
-    <state width="1877" height="2" key="GridCell.Tab.1.bottom" timestamp="1578147798509">
+    <state width="938" height="333" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1578219349828" />
+    <state width="938" height="333" key="GridCell.Tab.0.right" timestamp="1578219349829">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="2" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1578147798509" />
-    <state width="1877" height="2" key="GridCell.Tab.1.center" timestamp="1578147798508">
+    <state width="938" height="333" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1578219349829" />
+    <state width="938" height="333" key="GridCell.Tab.1.bottom" timestamp="1578219341807">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="2" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1578147798508" />
-    <state width="1877" height="2" key="GridCell.Tab.1.left" timestamp="1578147798508">
+    <state width="938" height="333" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1578219341807" />
+    <state width="938" height="333" key="GridCell.Tab.1.center" timestamp="1578219341807">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="2" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1578147798508" />
-    <state width="1877" height="2" key="GridCell.Tab.1.right" timestamp="1578147798509">
+    <state width="938" height="333" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1578219341807" />
+    <state width="938" height="333" key="GridCell.Tab.1.left" timestamp="1578219341807">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="2" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1578147798509" />
+    <state width="938" height="333" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1578219341807" />
+    <state width="938" height="333" key="GridCell.Tab.1.right" timestamp="1578219341807">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="333" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1578219341807" />
     <state x="334" y="130" key="new project wizard" timestamp="1578211333526">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -108,10 +112,22 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/wangxing/FingerPrint1.java</url>
-          <line>37</line>
+          <line>41</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/wangxing/FingerPrint1.java</url>
+          <line>98</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="m_sDeviceIP.length()" language="JAVA" />
+        <watch expression="m_sDeviceIP.length()" language="JAVA" />
+        <watch expression="args[4]" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

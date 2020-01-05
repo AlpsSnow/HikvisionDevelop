@@ -29,8 +29,14 @@ public class FingerPrint2 {
     // 指纹数据
     private static HCNetSDK.NET_DVR_FINGER_PRINT_CFG m_strFingerPrintCfg = new HCNetSDK.NET_DVR_FINGER_PRINT_CFG(); //指纹信息
 
-    public static int main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException {
         // write your code here
+
+        if(args.length != 5){
+            System.out.println("用法：" );
+            System.out.println("java FingerPrint2 <IP> <Port> <UserName> <Password> <CardNO>" );
+            return;
+        }
 
         // 初始化SDK资源
         boolean rt = hCNetSDK.NET_DVR_Init();
@@ -38,7 +44,7 @@ public class FingerPrint2 {
         if (rt != true)
         {
             System.out.println("NET_DVR_Init(),初始化SDK资源失败，错误号:" + hCNetSDK.NET_DVR_GetLastError());
-            return 1;
+            return;
         }
 
         // 设置连接超时时间与重连功能
@@ -47,31 +53,35 @@ public class FingerPrint2 {
         {
             System.out.println("NET_DVR_SetConnectTime(),设置连接超时失败，错误号:" + hCNetSDK.NET_DVR_GetLastError());
             hCNetSDK.NET_DVR_Cleanup();
-            return 1;
+            return;
         }
         rt = hCNetSDK.NET_DVR_SetReconnect(10000, true);
         if (rt != true)
         {
             System.out.println("NET_DVR_SetReconnect(),设置重连失败，错误号:" + hCNetSDK.NET_DVR_GetLastError());
             hCNetSDK.NET_DVR_Cleanup();
-            return 1;
+            return;
         }
 
         // 注册设备 LONG NET_DVR_Login_V40
         lUserID = new NativeLong(-1);
-        m_sDeviceIP = "192.168.160.1"; //设备ip地址
+        //m_sDeviceIP = "192.168.160.1"; //设备ip地址
+        m_sDeviceIP = args[0];
         m_strLoginInfo.sDeviceAddress = new byte[HCNetSDK.NET_DVR_DEV_ADDRESS_MAX_LEN];
         System.arraycopy(m_sDeviceIP.getBytes(), 0, m_strLoginInfo.sDeviceAddress, 0, m_sDeviceIP.length());
 
-        m_sUsername = "admin";//设备用户名
+        //m_sUsername = "admin";//设备用户名
+        m_sUsername = args[2];
         m_strLoginInfo.sUserName = new byte[HCNetSDK.NET_DVR_LOGIN_USERNAME_MAX_LEN];
         System.arraycopy(m_sUsername.getBytes(), 0, m_strLoginInfo.sUserName, 0, m_sUsername.length());
 
-        m_sPassword = new String("password");//设备密码
+        //m_sPassword = new String("password");//设备密码
+        m_sPassword = args[3];
         m_strLoginInfo.sPassword = new byte[HCNetSDK.NET_DVR_LOGIN_PASSWD_MAX_LEN];
         System.arraycopy(m_sPassword.getBytes(), 0, m_strLoginInfo.sPassword, 0, m_sPassword.length());
 
-        m_strLoginInfo.wPort = (short)Integer.parseInt("8000"); // 设备端口号
+        //m_strLoginInfo.wPort = (short)Integer.parseInt("8000"); // 设备端口号
+        m_strLoginInfo.wPort = (short)Integer.parseInt(args[1]);
 
         m_strLoginInfo.bUseAsynLogin = false; //是否异步登录：0- 否，1- 是
 
@@ -79,7 +89,7 @@ public class FingerPrint2 {
         if (lUserID.longValue() == -1) {
             System.out.println("NET_DVR_Login_V40(),注册失败，错误号:" + hCNetSDK.NET_DVR_GetLastError());
             hCNetSDK.NET_DVR_Cleanup();
-            return 1;
+            return;
         } else {
             System.out.println("注册成功");
         }
@@ -87,7 +97,8 @@ public class FingerPrint2 {
         //启动远程配置。
         m_strlpInBuffer.dwSize = m_strlpInBuffer.size();
         m_strlpInBuffer.dwFingerprintNum = 1; //获取指纹数量
-        m_sCardNo = new String("1");    //指纹关联的卡号
+        //m_sCardNo = new String("1");    //指纹关联的卡号
+        m_sCardNo = args[4];
         m_strlpInBuffer.byCardNo = new byte[HCNetSDK.ACS_CARD_NO_LEN];
         System.arraycopy(m_sCardNo.getBytes(), 0, m_strlpInBuffer.byCardNo,0,m_sCardNo.length());
         m_strlpInBuffer.dwEnableReaderNo = 1;   //指纹读卡器编号
@@ -110,7 +121,7 @@ public class FingerPrint2 {
             System.out.println("NET_DVR_StartRemoteConfig(),启动远程配置失败，错误号:" + hCNetSDK.NET_DVR_GetLastError());
             hCNetSDK.NET_DVR_Logout(lUserID);
             hCNetSDK.NET_DVR_Cleanup();
-            return 1;
+            return;
         }
 
         //获取指纹参数
@@ -171,7 +182,7 @@ public class FingerPrint2 {
             System.out.println("NET_DVR_StopRemoteConfig(),关闭远程配置失败，错误号:" + hCNetSDK.NET_DVR_GetLastError());
             hCNetSDK.NET_DVR_Logout(lUserID);
             hCNetSDK.NET_DVR_Cleanup();
-            return 1;
+            return;
         }
 
         // 注销
@@ -180,7 +191,7 @@ public class FingerPrint2 {
         {
             System.out.println("NET_DVR_Logout(),注销失败，错误号:" + hCNetSDK.NET_DVR_GetLastError());
             hCNetSDK.NET_DVR_Cleanup();
-            return 1;
+            return;
         }
 
         // 释放SDK资源
@@ -188,8 +199,8 @@ public class FingerPrint2 {
         if (rt != true)
         {
             System.out.println("NET_DVR_Cleanup(),释放SDK资源失败，错误号:" + hCNetSDK.NET_DVR_GetLastError());
-            return 1;
+            return;
         }
-        return 0;
+        return;
     }
 }

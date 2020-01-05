@@ -17,13 +17,18 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.wangxing.FingerPrint2" />
       <module name="FingerPrint2" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="PROGRAM_PARAMETERS" value="192.168.160.111 8000 admin 123456 1" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -51,13 +56,60 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578220053285">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578220053285" />
     <state x="1063" y="284" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog" timestamp="1578211457589">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1063" y="284" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578211457589" />
+    <state width="938" height="348" key="GridCell.Tab.0.bottom" timestamp="1578220102473">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1578220102473" />
+    <state width="938" height="348" key="GridCell.Tab.0.center" timestamp="1578220102473">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="348" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1578220102473" />
+    <state width="938" height="348" key="GridCell.Tab.0.left" timestamp="1578220102473">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="348" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1578220102473" />
+    <state width="938" height="348" key="GridCell.Tab.0.right" timestamp="1578220102473">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="348" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1578220102473" />
+    <state width="938" height="348" key="GridCell.Tab.1.bottom" timestamp="1578220060021">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1578220060021" />
+    <state width="938" height="348" key="GridCell.Tab.1.center" timestamp="1578220060021">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1578220060021" />
+    <state width="938" height="348" key="GridCell.Tab.1.left" timestamp="1578220060021">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1578220060021" />
+    <state width="938" height="348" key="GridCell.Tab.1.right" timestamp="1578220060021">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1578220060021" />
     <state x="1305" y="272" key="run.anything.popup" timestamp="1578215216806">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1305" y="272" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1578215216806" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/wangxing/FingerPrint2.java</url>
+          <line>87</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
