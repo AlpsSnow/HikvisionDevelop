@@ -10,6 +10,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/FingerPrint1_jar/FingerPrint1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/FingerPrint1_jar/FingerPrint1.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/wangxing/FingerPrint1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/wangxing/FingerPrint1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/wangxing/HCNetSDK.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/wangxing/HCNetSDK.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FingerPrint2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../FingerPrint2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FingerPrint2/out/artifacts/FingerPrint2_jar/FingerPrint2.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../FingerPrint2/out/artifacts/FingerPrint2_jar/FingerPrint2.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FingerPrint2/src/com/wangxing/FingerPrint2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FingerPrint2/src/com/wangxing/FingerPrint2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FingerPrint2/src/com/wangxing/HCNetSDK.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FingerPrint2/src/com/wangxing/HCNetSDK.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +41,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../FingerPrint2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -92,43 +97,43 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="301" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578223789571" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1578320419472">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1578322379721">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1578320419472" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1578322379721" />
     <state x="740" y="275" key="FileChooserDialogImpl/1920.98.1680.1010/0.0.1920.1040@0.0.1920.1040" timestamp="1578291492545" />
-    <state width="938" height="333" key="GridCell.Tab.0.bottom" timestamp="1578220196355">
+    <state width="936" height="104" key="GridCell.Tab.0.bottom" timestamp="1578322576730">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="333" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1578220196355" />
-    <state width="938" height="333" key="GridCell.Tab.0.center" timestamp="1578220196354">
+    <state width="936" height="104" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1578322576730" />
+    <state width="936" height="104" key="GridCell.Tab.0.center" timestamp="1578322576730">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="333" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1578220196354" />
-    <state width="938" height="333" key="GridCell.Tab.0.left" timestamp="1578220196354">
+    <state width="936" height="104" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1578322576730" />
+    <state width="936" height="104" key="GridCell.Tab.0.left" timestamp="1578322576730">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="333" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1578220196354" />
-    <state width="938" height="333" key="GridCell.Tab.0.right" timestamp="1578220196354">
+    <state width="936" height="104" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1578322576730" />
+    <state width="936" height="104" key="GridCell.Tab.0.right" timestamp="1578322576730">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="333" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1578220196354" />
-    <state width="938" height="333" key="GridCell.Tab.1.bottom" timestamp="1578220196355">
+    <state width="936" height="104" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1578322576730" />
+    <state width="936" height="104" key="GridCell.Tab.1.bottom" timestamp="1578322577174">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="333" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1578220196355" />
-    <state width="938" height="333" key="GridCell.Tab.1.center" timestamp="1578220196355">
+    <state width="936" height="104" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1578322577174" />
+    <state width="936" height="104" key="GridCell.Tab.1.center" timestamp="1578322577174">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="333" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1578220196355" />
-    <state width="938" height="333" key="GridCell.Tab.1.left" timestamp="1578220196355">
+    <state width="936" height="104" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1578322577174" />
+    <state width="936" height="104" key="GridCell.Tab.1.left" timestamp="1578322577174">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="333" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1578220196355" />
-    <state width="938" height="333" key="GridCell.Tab.1.right" timestamp="1578220196355">
+    <state width="936" height="104" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1578322577174" />
+    <state width="936" height="104" key="GridCell.Tab.1.right" timestamp="1578322577174">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="333" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1578220196355" />
+    <state width="936" height="104" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1578322577174" />
     <state x="440" y="94" key="SettingsEditor" timestamp="1578223886590">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -152,7 +157,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/wangxing/FingerPrint1.java</url>
-          <line>99</line>
+          <line>106</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

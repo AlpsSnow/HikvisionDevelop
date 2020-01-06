@@ -3164,7 +3164,7 @@ EMAIL参数结构
     boolean  NET_DVR_SetConfigFile_EX(NativeLong lUserID, String sInBuffer, int dwInSize);
 
     //启用日志文件写入接口
-    boolean  NET_DVR_SetLogToFile(boolean bLogEnable , String  strLogDir, boolean bAutoDel );
+    boolean  NET_DVR_SetLogToFile(int bLogEnable , String  strLogDir, boolean bAutoDel );
     boolean  NET_DVR_GetSDKState( NET_DVR_SDKSTATE pSDKState);
     boolean  NET_DVR_GetSDKAbility( NET_DVR_SDKABL pSDKAbl);
     boolean  NET_DVR_GetPTZProtocol(NativeLong lUserID, NET_DVR_PTZCFG  pPtzcfg);

@@ -40,13 +40,19 @@ public class FingerPrint2 {
 
         // 初始化SDK资源
         boolean rt = hCNetSDK.NET_DVR_Init();
-
         if (rt != true)
         {
             System.out.println("NET_DVR_Init() failed. ErrorCode:" + hCNetSDK.NET_DVR_GetLastError());
             return;
         }
 
+        rt = hCNetSDK.NET_DVR_SetLogToFile(3,"C:\\SdkLog\\", true);
+        if (rt != true)
+        {
+            System.out.println("NET_DVR_SetLogToFile() failed. ErrorCode:" + hCNetSDK.NET_DVR_GetLastError());
+            hCNetSDK.NET_DVR_Cleanup();
+            return;
+        }
         // 设置连接超时时间与重连功能
         rt = hCNetSDK.NET_DVR_SetConnectTime(2000, 1);
         if (rt != true)
