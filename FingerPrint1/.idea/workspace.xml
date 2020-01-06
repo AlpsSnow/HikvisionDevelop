@@ -7,18 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c6f8661-98a8-4942-9b2a-4918fe4d0d5e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FingerPrint2/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/FingerPrint1_jar/FingerPrint1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/FingerPrint1_jar/FingerPrint1.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/wangxing/FingerPrint1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/wangxing/FingerPrint1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/wangxing/HCNetSDK.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/wangxing/HCNetSDK.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FingerPrint2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../FingerPrint2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FingerPrint2/out/artifacts/FingerPrint2_jar/FingerPrint2.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../FingerPrint2/out/artifacts/FingerPrint2_jar/FingerPrint2.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FingerPrint2/out/production/FingerPrint2/com/wangxing/FingerPrint2 - 快捷方式.lnk" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FingerPrint2/src/com/wangxing/FingerPrint2 - 快捷方式.lnk" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FingerPrint2/src/com/wangxing/FingerPrint2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FingerPrint2/src/com/wangxing/FingerPrint2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FingerPrint2/src/com/wangxing/HCNetSDK.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FingerPrint2/src/com/wangxing/HCNetSDK.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +36,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../FingerPrint2" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -101,10 +92,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="301" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578223789571" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1578291492545">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1578320419472">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1578224011148" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1578320419472" />
     <state x="740" y="275" key="FileChooserDialogImpl/1920.98.1680.1010/0.0.1920.1040@0.0.1920.1040" timestamp="1578291492545" />
     <state width="938" height="333" key="GridCell.Tab.0.bottom" timestamp="1578220196355">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -161,7 +152,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/wangxing/FingerPrint1.java</url>
-          <line>98</line>
+          <line>99</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

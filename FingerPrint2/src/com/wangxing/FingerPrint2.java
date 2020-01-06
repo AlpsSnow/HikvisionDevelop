@@ -85,6 +85,7 @@ public class FingerPrint2 {
 
         m_strLoginInfo.bUseAsynLogin = false; //是否异步登录：0- 否，1- 是
 
+        m_strLoginInfo.write();
         lUserID = hCNetSDK.NET_DVR_Login_V40(m_strLoginInfo, m_strDeviceInfo);
         if (lUserID.longValue() == -1) {
             System.out.println("NET_DVR_Login_V40() failed. ErrorCode:" + hCNetSDK.NET_DVR_GetLastError());
