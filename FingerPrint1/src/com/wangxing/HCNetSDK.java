@@ -13,7 +13,7 @@ import com.sun.jna.ptr.ShortByReference;
 //SDK接口说明,HCNetSDK.dll
 public interface HCNetSDK extends StdCallLibrary {
 
-    HCNetSDK INSTANCE = (HCNetSDK) Native.loadLibrary("D:\\haikangweishi\\SDK\\HCNetSDK",
+    HCNetSDK INSTANCE = (HCNetSDK) Native.loadLibrary("HCNetSDK",
             HCNetSDK.class);
     /***宏定义***/
     //常量
@@ -3145,7 +3145,7 @@ EMAIL参数结构
 //播放库函数声明,PlayCtrl.dll
 interface PlayCtrl extends StdCallLibrary
 {
-    PlayCtrl INSTANCE = (PlayCtrl) Native.loadLibrary("D:\\haikangweishi\\SDK\\PlayCtrl.dll",
+    PlayCtrl INSTANCE = (PlayCtrl) Native.loadLibrary("PlayCtrl.dll",
             PlayCtrl.class);
 
     public static final int STREAME_REALTIME = 0;

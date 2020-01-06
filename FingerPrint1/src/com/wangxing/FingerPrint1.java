@@ -34,7 +34,7 @@ public class FingerPrint1 {
     public static void main(String[] args) throws InterruptedException {
         // write your code here
         if(args.length != 5){
-            System.out.println("用法：" );
+            System.out.println("usage：" );
             System.out.println("java -jar FingerPrint1.jar <IP> <Port> <UserName> <Password> <CardNO>" );
             return;
         }
@@ -43,7 +43,7 @@ public class FingerPrint1 {
 
         if (rt != true)
         {
-            System.out.println("NET_DVR_Init(),初始化SDK资源失败，错误号:" + hCNetSDK.NET_DVR_GetLastError());
+            System.out.println("NET_DVR_Init() failed. ErrorCode:" + hCNetSDK.NET_DVR_GetLastError());
             return;
         }
 
@@ -51,14 +51,14 @@ public class FingerPrint1 {
         rt = hCNetSDK.NET_DVR_SetConnectTime(2000, 1);
         if (rt != true)
         {
-            System.out.println("NET_DVR_SetConnectTime(),设置连接超时失败，错误号:" + hCNetSDK.NET_DVR_GetLastError());
+            System.out.println("NET_DVR_SetConnectTime() failed. ErrorCode:" + hCNetSDK.NET_DVR_GetLastError());
             hCNetSDK.NET_DVR_Cleanup();
             return;
         }
         rt = hCNetSDK.NET_DVR_SetReconnect(10000, true);
         if (rt != true)
         {
-            System.out.println("NET_DVR_SetReconnect(),设置重连失败，错误号:" + hCNetSDK.NET_DVR_GetLastError());
+            System.out.println("NET_DVR_SetReconnect() failed. ErrorCode:" + hCNetSDK.NET_DVR_GetLastError());
             hCNetSDK.NET_DVR_Cleanup();
             return;
         }
@@ -87,11 +87,11 @@ public class FingerPrint1 {
 
         lUserID = hCNetSDK.NET_DVR_Login_V40(m_strLoginInfo, m_strDeviceInfo);
         if (lUserID.longValue() == -1) {
-            System.out.println("NET_DVR_Login_V40(),注册失败，错误号:" + hCNetSDK.NET_DVR_GetLastError());
+            System.out.println("NET_DVR_Login_V40() failed. ErrorCode:" + hCNetSDK.NET_DVR_GetLastError());
             hCNetSDK.NET_DVR_Cleanup();
             return;
         } else {
-            System.out.println("注册成功");
+            System.out.println("NET_DVR_Login_V40() SUCCESS.");
         }
 
         //获取一枚指纹参数
@@ -114,7 +114,7 @@ public class FingerPrint1 {
         rt = hCNetSDK.NET_DVR_StopRemoteConfig(m_lGetFingerPrintCfgHandle);
         if (rt != true)
         {
-            System.out.println("NET_DVR_StopRemoteConfig(),关闭远程配置失败，错误号:" + hCNetSDK.NET_DVR_GetLastError());
+            System.out.println("NET_DVR_StopRemoteConfig() failed. ErrorCode:" + hCNetSDK.NET_DVR_GetLastError());
             hCNetSDK.NET_DVR_Logout(lUserID);
             hCNetSDK.NET_DVR_Cleanup();
             return;
@@ -124,7 +124,7 @@ public class FingerPrint1 {
         rt =hCNetSDK.NET_DVR_Logout(lUserID);
         if (rt != true)
         {
-            System.out.println("NET_DVR_Logout(),注销失败，错误号:" + hCNetSDK.NET_DVR_GetLastError());
+            System.out.println("NET_DVR_Logout() failed. ErrorCode:" + hCNetSDK.NET_DVR_GetLastError());
             hCNetSDK.NET_DVR_Cleanup();
             return;
         }
@@ -133,7 +133,7 @@ public class FingerPrint1 {
         rt = hCNetSDK.NET_DVR_Cleanup();
         if (rt != true)
         {
-            System.out.println("NET_DVR_Cleanup(),释放SDK资源失败，错误号:" + hCNetSDK.NET_DVR_GetLastError());
+            System.out.println("NET_DVR_Cleanup() failed. ErrorCode:" + hCNetSDK.NET_DVR_GetLastError());
             return;
         }
         return;
@@ -168,7 +168,7 @@ public class FingerPrint1 {
                 null);
         if(rt.longValue() == -1)
         {
-            System.out.println("NET_DVR_StartRemoteConfig(),启动远程配置失败，错误号:" + hCNetSDK.NET_DVR_GetLastError());
+            System.out.println("NET_DVR_StartRemoteConfig() failed. ErrorCode:" + hCNetSDK.NET_DVR_GetLastError());
             return false;
         }
         return true;
@@ -178,16 +178,16 @@ public class FingerPrint1 {
     public void GetFingerPrintCfgCallback(int dwType, Pointer lpBuffer, int dwBufLen, Pointer pUserData){
         if (dwType == hCNetSDK.NET_SDK_CALLBACK_TYPE_DATA)
         {
+            System.out.println("GetFingerPrintCfgCallback NET_SDK_CALLBACK_TYPE_DATA");
             //数据信息
             m_strFingerPrintCfg.write();
             Pointer pFingerPrintCfg = m_strFingerPrintCfg.getPointer();
             pFingerPrintCfg.write(0, lpBuffer.getByteArray(0,m_strFingerPrintCfg.size()), 0, m_strFingerPrintCfg.size());
             m_strFingerPrintCfg.read();
             if(m_strFingerPrintCfg.dwsize != 0) {
-                System.out.println("GetFingerPrintCfgCallback NET_SDK_CALLBACK_TYPE_DATA, 取得指纹成功");
-                System.out.println("指纹数据：" + new String(m_strFingerPrintCfg.byFingerData));
+                System.out.println("FingerPrintDate：" + new String(m_strFingerPrintCfg.byFingerData));
             }else{
-                System.out.println("GetFingerPrintCfgCallback NET_SDK_CALLBACK_TYPE_DATA, 取得指纹失败");
+                System.out.println("GetFingerPrintCfgCallback NET_SDK_CALLBACK_TYPE_DATA, FingerPrintDate'size = 0. ErrorCode:" + hCNetSDK.NET_DVR_GetLastError());
             }
         }else if (dwType == hCNetSDK.NET_SDK_CALLBACK_TYPE_STATUS)
         {
@@ -196,20 +196,21 @@ public class FingerPrint1 {
             Pointer pcpBuff = cfgBuf.getPointer();
             pcpBuff.write(0, lpBuffer.getByteArray(0,cfgBuf.size()), 0, cfgBuf.size());
             cfgBuf.read();
+
             if (cfgBuf.dwstatus == HCNetSDK.NET_SDK_CALLBACK_STATUS_SUCCESS)
             {
                 m_bGetFingerPrintCfgFinish = true; //获取指纹参数完成
-                System.out.println("GetFingerPrintCfgCallback NET_SDK_CALLBACK_STATUS_SUCCESS, 指纹查找完成");
+                System.out.println("GetFingerPrintCfgCallback NET_SDK_CALLBACK_STATUS_SUCCESS");
             }else if(cfgBuf.dwstatus == HCNetSDK.NET_SDK_CALLBACK_STATUS_FAILED)
             {
                 byte[] byCardNo = new byte[HCNetSDK.ACS_CARD_NO_LEN + 1];
                 System.arraycopy(cfgBuf.byCardNo, 0, byCardNo, 0, HCNetSDK.NET_SDK_CALLBACK_STATUS_FAILED);
                 String strCardNo = new String(byCardNo);
 
-                System.out.println("GetFingerPrintCfgCallback NET_SDK_CALLBACK_STATUS_FAILED, 错误码:" + cfgBuf.dwErrorCode + " 卡号："+ strCardNo);
+                System.out.println("GetFingerPrintCfgCallback NET_SDK_CALLBACK_STATUS_FAILED. ErrorCode:" + hCNetSDK.NET_DVR_GetLastError());
 
             }else{
-                System.out.println("GetFingerPrintCfgCallback NET_SDK_CALLBACK_STATUS_PROCESSING, 指纹查找中");
+                System.out.println("GetFingerPrintCfgCallback NET_SDK_CALLBACK_STATUS_PROCESSING.");
             }
         }
     }
