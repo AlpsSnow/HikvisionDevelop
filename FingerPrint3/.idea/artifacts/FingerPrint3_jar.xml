@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="FingerPrint3:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/FingerPrint3_jar</output-path>
+    <root id="archive" name="FingerPrint3.jar">
+      <element id="module-output" name="FingerPrint3" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/jna.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

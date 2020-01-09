@@ -33,6 +33,10 @@ PlayCtrl INSTANCE = (PlayCtrl) Native.loadLibrary("D:\\haikangweishi\\SDK\\PlayC
 Demo1：FingerPrint1
 
 2. 设备网络SDK编程指南（明眸）.pdf ：不通过回调方式，直接引入新函数NET_DVR_GetNextRemoteConfig，逐条取得指纹信息。
-Demo1：FingerPrint2
+Demo2：FingerPrint2
+
+#### DS-K1F820-F 指纹录入仪开发
+1. 指纹图像采集  
+Demo3：FingerPrint3
 
 

@@ -8,13 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5c6f8661-98a8-4942-9b2a-4918fe4d0d5e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/FingerPrint1_jar/FingerPrint1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/FingerPrint1_jar/FingerPrint1.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/wangxing/FingerPrint1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/wangxing/FingerPrint1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/wangxing/HCNetSDK.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/wangxing/HCNetSDK.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FingerPrint2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../FingerPrint2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FingerPrint2/out/artifacts/FingerPrint2_jar/FingerPrint2.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../FingerPrint2/out/artifacts/FingerPrint2_jar/FingerPrint2.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FingerPrint2/src/com/wangxing/FingerPrint2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FingerPrint2/src/com/wangxing/FingerPrint2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FingerPrint2/src/com/wangxing/HCNetSDK.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FingerPrint2/src/com/wangxing/HCNetSDK.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +34,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="D:/java work/FPModuleSDK_Win_V2.2.0_Build190225/Demo/JavaDemo" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -97,10 +90,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="301" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578223789571" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1578322379721">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1578572049120">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1578322379721" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1578572049120" />
     <state x="740" y="275" key="FileChooserDialogImpl/1920.98.1680.1010/0.0.1920.1040@0.0.1920.1040" timestamp="1578291492545" />
     <state width="936" height="104" key="GridCell.Tab.0.bottom" timestamp="1578322576730">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -138,10 +131,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1578223886590" />
-    <state x="640" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1578220939403">
+    <state x="640" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1578571540457">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="640" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578220939403" />
+    <state x="640" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578571540457" />
     <state x="334" y="130" key="new project wizard" timestamp="1578211333526">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
