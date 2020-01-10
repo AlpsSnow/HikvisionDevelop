@@ -2,16 +2,20 @@ package com.wangxing;
 
 import com.sun.jna.Pointer;
 import com.sun.jna.ptr.IntByReference;
-import com.wangxing.fingerprint.*;
+import com.wangxing.fingerprint.FPJna;
+import com.wangxing.fingerprint.FPMsg;
+import com.wangxing.fingerprint.FpCallback;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class FingerPrint3 {
+public class FingerPrint4 {
 
     static FPJna mFPJna=new FPJna();
-    static int index =0;
+    static int index;
+
+    //  指纹模板录入的回调函数
     static FpCallback mFpCallback = new FpCallback() {
         @Override
         public void FpMessageHandler(int enMsgType, FPMsg pMsgData) {
@@ -19,9 +23,11 @@ public class FingerPrint3 {
             switch(enMsgType)
             {
                 case FPJna.FP_MSG_PRESS_FINGER:
+                    // 提示按下手指
                     System.out.println(">>>>Place your finger");
                     break;
                 case FPJna.FP_MSG_RISE_FINGER:
+                    // 提示抬起手指
                     System.out.println(">>>>Lift your finger");
                     break;
                 case FPJna.FP_MSG_ENROLL_TIME:
@@ -31,9 +37,9 @@ public class FingerPrint3 {
                     break;
                 case FPJna.FP_MSG_CAPTURED_IMAGE:
                     // 显示当前录入的指纹图像信息
-                    int w=pMsgData.dwArg1;
-                    int h=pMsgData.dwArg2;
-                    Pointer p = pMsgData.pbyImage;
+                    int w=pMsgData.dwArg1; //指纹图像宽
+                    int h=pMsgData.dwArg2; //指纹图像高
+                    Pointer p = pMsgData.pbyImage; //指纹图像数据
                     byte[]data =p.getByteArray(0, w*h) ;
                     SaveBmp("Enroll"+index+".bmp",data,w,h);
                     System.out.println(">>>>enMsgType:w:"+w+"h:"+h);
@@ -63,7 +69,6 @@ public class FingerPrint3 {
     }
 
     public static void main(String[] args) {
-
         int iRet=-1;
 
         //Init
@@ -80,8 +85,7 @@ public class FingerPrint3 {
             return;
         }
 
-        //InstallMessageHandler
-        /*
+        // InstallMessageHandler 注册回调函数
         System.out.println("start InstallMessageHandler");
         iRet = mFPJna.InstallMessageHandler(mFpCallback);
         System.out.println("finish InstallMessageHandler:"+iRet);
@@ -91,7 +95,7 @@ public class FingerPrint3 {
             mFPJna.CloseDevice();
             return;
         }
-        */
+
         //GetDeviceInfo
         String devInfo = mFPJna.GetDeviceInfo();
         System.out.println("GetDeviceInfo:"+devInfo);
@@ -112,44 +116,48 @@ public class FingerPrint3 {
             return;
         }
 
-        //指纹采集
-        long st = System.currentTimeMillis();
-        IntByReference pdwFpstatus = new IntByReference();
-        IntByReference pdwWidth = new IntByReference();
-        IntByReference pdwHeight = new IntByReference();
-        byte[]pbyImageData = new byte[FPJna.FP_IMAGE_WIDTH*FPJna.FP_IMAGE_HEIGHT];
-        System.out.println("start DetectFinger");
-        System.out.println(">>>>Place your finger in 15s");
-        while((System.currentTimeMillis()-st)/1000<15)
+        // SetTimeout 设置录入指纹时，等待手指按下和抬起的超时等待时间。
+        System.out.println("Start SetTimeout");
+        iRet=mFPJna.SetTimeout(15);
+        System.out.println("finish SetTimeout:"+iRet);
+        if (iRet != FPJna.FP_SUCCESS)
         {
-            iRet=mFPJna.DetectFinger(pdwFpstatus);
-            if(iRet!=FPJna.FP_SUCCESS)
-            {
-                System.out.println(String.format("DetectFinger() failed,Err=%d. Exit.", iRet));
-                mFPJna.CloseDevice();
-                return;
-            }
-            if(pdwFpstatus.getValue()==1)
-            {
-                // 采集指纹图像
-                System.out.println(">>>>CaptureImage...");
-                iRet =mFPJna.CaptureImage(pbyImageData, pdwWidth, pdwHeight);
-                if(iRet!=FPJna.FP_SUCCESS)
-                {
-                    System.out.println(String.format("CaptureImage() failed,Err=%d, Exit.", iRet));
-                    mFPJna.CloseDevice();
-                    return;
-                }
-                SaveBmp("CaptureImage.bmp",pbyImageData,pdwWidth.getValue(),pdwHeight.getValue());
-                System.out.println(">>>>CaptureImage:"+iRet);
-                break;
-            }
+            System.out.println("Exit");
+            mFPJna.CloseDevice();
+            return;
         }
-        if(pdwFpstatus.getValue()!=1)
-            System.out.println("finish DetectFinger TimeOut");
-        else
-            System.out.println("finish DetectFinger");
 
+        // GetTimeout
+        System.out.println("start GetTimeout");
+        IntByReference ref = new IntByReference();
+        iRet=mFPJna.GetTimeout(ref);
+        System.out.println("finish GetTimeout:"+iRet+", Time:"+ref.getValue());
+        if(iRet!=FPJna.FP_SUCCESS)
+        {
+            System.out.println("Exit");
+            mFPJna.CloseDevice();
+            return;
+        }
+
+        // FpEnroll 录入指纹模板
+        System.out.println("start FpEnroll");
+        byte[] pbyFpTemplate=new byte[FPJna.FP_FEATURE_LEN]; // 指纹模板数据
+        mFPJna.SetCollectTimes(3); // 设置指纹采集次数
+        iRet =mFPJna.FpEnroll(pbyFpTemplate);
+        System.out.println("finish FpEnroll:"+iRet);
+        if(iRet!=FPJna.FP_SUCCESS)
+        {
+            System.out.println("Exit");
+            mFPJna.CloseDevice();
+            return;
+        }
+
+        //GetQuality 查询指纹模板质量
+        System.out.println("start GetQuality");
+        iRet =mFPJna.GetQuality(pbyFpTemplate);
+        System.out.println("finish GetQuality:"+iRet);
+
+        //CloseDevice
         mFPJna.CloseDevice();
         System.out.println("Exit");
     }

@@ -36,7 +36,10 @@ Demo1：FingerPrint1
 Demo2：FingerPrint2
 
 #### DS-K1F820-F 指纹录入仪开发
-1. 指纹图像采集  
+1. 指纹图像采集（指纹图像数据，数据长度为图像高度 X 图像宽度，最大不超过 90KB）  
 Demo3：FingerPrint3
+
+2. 录入指纹并获取指纹模板（数据长度为 512 字节）  
+Demo4: FingerPrint4  
 
 
