@@ -6,6 +6,7 @@ import com.example.fingerprint5.service.fingerprint.*;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
+import java.util.UUID;
 
 @Service
 public class FingerPrintService {
@@ -28,7 +29,7 @@ public class FingerPrintService {
         }
     }
 
-    public boolean getPbyImageData(byte[] imagedata) throws IOException {
+    public boolean getPbyImageData(StringBuilder imageName) throws IOException {
         int iRet = -1;
 
         //Init
@@ -86,7 +87,9 @@ public class FingerPrintService {
                     mFPJna.CloseDevice();
                     return false;
                 }
-                SaveBmp("CaptureImage.bmp", pbyImageData, pdwWidth.getValue(), pdwHeight.getValue());
+                String uuid = UUID.randomUUID().toString().replace("-", "").toLowerCase();
+                imageName.append(uuid +".bmp");
+                SaveBmp("D:/DetectFinger/"+imageName.toString(), pbyImageData, pdwWidth.getValue(), pdwHeight.getValue());
                 System.out.println(">>>>CaptureImage:" + iRet);
                 break;
             }
@@ -97,16 +100,9 @@ public class FingerPrintService {
             System.out.println("Exit");
             return false;
         }
-        else{
-            System.out.println("finish DetectFinger");
-
-        }
+        System.out.println("finish DetectFinger");
         mFPJna.CloseDevice();
         System.out.println("Exit");
-        File file = new File("CaptureImage.bmp");
-        FileInputStream inputStream = new FileInputStream(file);
-        //imagedata = new byte[inputStream.available()];
-        inputStream.read(imagedata, 0, inputStream.available());
         return true;
     }
 

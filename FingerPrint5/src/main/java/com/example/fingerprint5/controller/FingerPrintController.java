@@ -1,5 +1,6 @@
 package com.example.fingerprint5.controller;
 
+import com.example.fingerprint5.model.FingerPrintImage;
 import com.example.fingerprint5.service.FingerPrintService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -7,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import sun.misc.BASE64Encoder;
 
 import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletResponse;
@@ -51,13 +53,41 @@ public class FingerPrintController {
     @RequestMapping(value = "/test", produces = MediaType.IMAGE_JPEG_VALUE)
     @ResponseBody
     public byte[]  getFingerPrintImage() throws IOException {
-        byte[] imageData = new byte[93000];
+        StringBuilder imageName = new StringBuilder();
         boolean iRet = false;
-        iRet = fingerPrintService.getPbyImageData(imageData);
+        iRet = fingerPrintService.getPbyImageData(imageName);
         if (!iRet){
-            return imageData;
+            byte[] date = new byte[0];
+            return date;
         }
-        return imageData;
+        File file = new File(imageName.toString());
+        FileInputStream inputStream = new FileInputStream(file);
+        byte[] imagedata = new byte[inputStream.available()];
+        inputStream.read(imagedata, 0, inputStream.available());
+        return imagedata;
+    }
+
+    @RequestMapping(value = "/getImageName")
+    @ResponseBody
+    public Object  getImageName() throws IOException {
+        FingerPrintImage fingerPrintImage = new FingerPrintImage();
+        StringBuilder imageName = new StringBuilder();
+        boolean iRet = false;
+        iRet = fingerPrintService.getPbyImageData(imageName);
+        if (!iRet){
+            return fingerPrintImage;
+        }
+        File file = new File("D:/DetectFinger/"+imageName.toString());
+        FileInputStream inputStream = new FileInputStream(file);
+        byte[] buffer = new byte[inputStream.available()];
+        inputStream.read(buffer, 0, inputStream.available());
+        inputStream.close();
+        BASE64Encoder encoder = new BASE64Encoder();
+        String imgStr = encoder.encode(buffer);
+        fingerPrintImage.setName(imageName.toString());
+        fingerPrintImage.setBase64data("date:image/jpeg;base64,"+imgStr);
+        return fingerPrintImage;
+
     }
 
 
